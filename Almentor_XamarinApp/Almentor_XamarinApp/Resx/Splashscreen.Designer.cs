@@ -88,7 +88,7 @@ namespace Almentor_XamarinApp.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Our Product.
+        ///   Looks up a localized string similar to show All.
         /// </summary>
         internal static string BtnProdct {
             get {
@@ -115,7 +115,7 @@ namespace Almentor_XamarinApp.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Product.
+        ///   Looks up a localized string similar to show All.
         /// </summary>
         internal static string LblAllProduct {
             get {
@@ -129,6 +129,15 @@ namespace Almentor_XamarinApp.Resx {
         internal static string logo {
             get {
                 return ResourceManager.GetString("logo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Almentor_XamarinApp.Images.Icon.LogoEn.png.
+        /// </summary>
+        internal static string Logo_ {
+            get {
+                return ResourceManager.GetString("Logo_", resourceCulture);
             }
         }
     }

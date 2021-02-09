@@ -82,7 +82,7 @@
                                             CornerRadius="7" 
                                             CommandParameter="{Binding productgId}"
                                             Command="{Binding BindingContext.NavigateDetailsCommand ,Source={x:Reference MyProductPag}}" 
-                                            BackgroundColor="{StaticResource Blue}"
+                                            BackgroundColor="{StaticResource Red}"
                                              TextColor="{StaticResource Gray-100}"
                                           />
 
@@ -141,7 +141,7 @@
                                             x:Name="btn_nav"
                                             HeightRequest="40"
                                             CornerRadius="7"
-                                            BackgroundColor="{StaticResource Blue}"
+                                            BackgroundColor="{StaticResource Red}"
                                              TextColor="{StaticResource Gray-100}"
                                           />
                                                                 </StackLayout>
@@ -199,7 +199,7 @@
                                             x:Name="btn_nav"
                                             HeightRequest="40"
                                             CornerRadius="7"
-                                            BackgroundColor="{StaticResource Blue}"
+                                            BackgroundColor="{StaticResource Red}"
                                              TextColor="{StaticResource Gray-100}"
                                              Command="{Binding BindingContext.NavigateDetailsCommand ,Source={x:Reference MyProductPag}}" 
                                             CommandParameter="{Binding productgId}"

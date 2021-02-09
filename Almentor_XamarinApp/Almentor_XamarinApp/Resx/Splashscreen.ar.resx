@@ -124,7 +124,7 @@
     <value>DynamicResourceGray-200</value>
   </data>
   <data name="BtnProdct" xml:space="preserve">
-    <value>عرض المنتجات</value>
+    <value>عرض الكل</value>
   </data>
   <data name="btn_nav" xml:space="preserve">
     <value>عرض</value>
@@ -133,12 +133,15 @@
     <value>مرحبا</value>
   </data>
   <data name="LblAllProduct" xml:space="preserve">
-    <value>جميع المنتجات</value>
+    <value>عرض الجميع </value>
   </data>
   <data name="lbl_details" xml:space="preserve">
     <value>تفاصيل</value>
   </data>
   <data name="logo" xml:space="preserve">
     <value>Almentor_XamarinApp.Images.Icon.SouqLogoAr.jpg</value>
+  </data>
+  <data name="Logo_" xml:space="preserve">
+    <value>Almentor_XamarinApp.Images.Icon.LogoAr.png</value>
   </data>
 </root>

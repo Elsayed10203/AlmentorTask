@@ -89,9 +89,9 @@ namespace Almentor_XamarinApp.Dal
                 new Product(){productgId=4,productName="منتج 4",productPrice=5200,productImage="https://picsum.photos/208/300"},
                 new Product(){productgId=5,productName="منتج 5",productPrice=5200,productImage="https://picsum.photos/209/300"},
                 new Product(){productgId=6,productName="منتج 6",productPrice=5200,productImage="https://picsum.photos/222/300"},
-                new Product(){productgId=1,productName="منتج7",productPrice=5200,productImage="https://picsum.photos/205/300"},
-                new Product(){productgId=3,productName="منتج 8 ",productPrice=5200,productImage="https://picsum.photos/207/300"},
-                new Product(){productgId=3,productName="منتج 9 ",productPrice=5200,productImage="https://picsum.photos/207/300"},
+                new Product(){productgId=7,productName="منتج7",productPrice=5200,productImage="https://picsum.photos/205/300"},
+                new Product(){productgId=8,productName="منتج 8 ",productPrice=5200,productImage="https://picsum.photos/207/300"},
+                new Product(){productgId=9,productName="منتج 9 ",productPrice=5200,productImage="https://picsum.photos/207/300"},
               
 
             };
@@ -107,8 +107,8 @@ namespace Almentor_XamarinApp.Dal
                 new Product(){productgId=4,productName="Product 4",productPrice=2500,productImage="https://picsum.photos/225/300"},
                 new Product(){productgId=5,productName="Product 5",productPrice=7500,productImage="https://picsum.photos/226/300"},
                 new Product(){productgId=6,productName="Product 6",productPrice=3500,productImage="https://picsum.photos/227/300"}, 
-                new Product(){productgId=5,productName="Product 7",productPrice=7500,productImage="https://picsum.photos/226/300"},
-                new Product(){productgId=6,productName="Product 8",productPrice=3500,productImage="https://picsum.photos/227/300"},
+                new Product(){productgId=7,productName="Product 7",productPrice=7500,productImage="https://picsum.photos/226/300"},
+                new Product(){productgId=8,productName="Product 8",productPrice=3500,productImage="https://picsum.photos/227/300"},
 
             };
          }

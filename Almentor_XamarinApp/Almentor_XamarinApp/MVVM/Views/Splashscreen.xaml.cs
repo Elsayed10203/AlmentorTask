@@ -15,7 +15,7 @@ namespace Almentor_XamarinApp.MVVM.Views
             InitializeComponent();
             
             stck_lang.BindingContext = stck_BtnNavig.BindingContext = SplashscreenViewModel_ = new MVVM.ViewModel.SplashscreenViewModel(Navigation);
-            string logoImage = Almentor_XamarinApp.Resx.Splashscreen.logo;
+            string logoImage = Almentor_XamarinApp.Resx.Splashscreen.Logo_;
             ImgLogo.Source = ImageSource.FromResource(logoImage);
            //  this.BackgroundImageSource = ImageSource.FromResource("Almentor_XamarinApp.Images.Image.ShopingBckPic.jpg");
         }

@@ -23,6 +23,7 @@ namespace Almentor_XamarinApp.MVVM.Views
            this.BindingContext= stckHeadre.BindingContext=ProductViewModel_ = MVVM.ViewModel.ViewModelLocator.ProductViewModel;
             ProductViewModel_.GetImageCarouser();
             ImagCarouser.ItemsSource = ProductViewModel_.AllImageCarouser;
+            lbl_id.Text = id.ToString();
         }
         private Timer timer;
 

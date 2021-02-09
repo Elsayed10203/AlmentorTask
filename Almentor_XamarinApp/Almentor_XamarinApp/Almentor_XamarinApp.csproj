@@ -16,6 +16,8 @@
     <None Remove="Images\Icon\SouqLogoAr.jpg" />
     <None Remove="Images\Icon\SouqLogoAr.png" />
     <None Remove="Images\Icon\souqLogoEn.png" />
+    <None Remove="Images\Image\LogoAr.png" />
+    <None Remove="Images\Image\LogoEn.png" />
     <None Remove="Images\Image\ShopingBckPic.jpg" />
   </ItemGroup>
 
@@ -25,6 +27,8 @@
     <EmbeddedResource Include="Images\Icon\SouqLogoAr.jpg" />
     <EmbeddedResource Include="Images\Icon\SouqLogoAr.png" />
     <EmbeddedResource Include="Images\Icon\souqLogoEn.png" />
+    <EmbeddedResource Include="Images\Icon\LogoAr.png" />
+    <EmbeddedResource Include="Images\Icon\LogoEn.png" />
     <EmbeddedResource Include="Images\Image\ShopingBckPic.jpg" />
   </ItemGroup>
 

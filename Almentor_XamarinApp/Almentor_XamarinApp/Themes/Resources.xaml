@@ -56,7 +56,7 @@
     <Style x:Key="Style3" TargetType="Label">
         <Setter Property="FontFamily" Value="Gibson"/>
         <Setter Property="FontSize" Value="24"/>
-        <Setter Property="TextColor" Value="#4acaff"/>
+        <Setter Property="TextColor" Value="#ff4a4a"/>
     </Style>
 
     <Style x:Key="Style4" TargetType="Label">

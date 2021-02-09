@@ -28,13 +28,16 @@
                     WidthRequest="25" 
                     BackgroundColor="Transparent"
                     Source="{local1:EmbededImage Almentor_XamarinApp.Images.Icon.left.png}"/>
-                <StackLayout HorizontalOptions="CenterAndExpand" >
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                     <Label       
                         VerticalOptions="StartAndExpand"
                         FontAttributes="Bold" CharacterSpacing="1"
                     x:Name="LblDetails" FontSize="19"
                     Text="{x:Static Resx:Splashscreen.lbl_details}" 
                        />
+                    <Label x:Name="lbl_id"  
+                           FontSize="19"
+                           />
                 </StackLayout>
 
             </StackLayout>
