@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Icon\Lang.png" />
+    <None Remove="Images\Icon\left.png" />
+    <None Remove="Images\Icon\SouqLogoAr.jpg" />
+    <None Remove="Images\Icon\SouqLogoAr.png" />
+    <None Remove="Images\Icon\souqLogoEn.png" />
+    <None Remove="Images\Image\ShopingBckPic.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Icon\Lang.png" />
+    <EmbeddedResource Include="Images\Icon\left.png" />
+    <EmbeddedResource Include="Images\Icon\SouqLogoAr.jpg" />
+    <EmbeddedResource Include="Images\Icon\SouqLogoAr.png" />
+    <EmbeddedResource Include="Images\Icon\souqLogoEn.png" />
+    <EmbeddedResource Include="Images\Image\ShopingBckPic.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CarouselView.FormsPlugin" Version="6.0.0" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\XamarinRevision.Common\XamarinRevision.Common.csproj" />
+    <ProjectReference Include="..\..\XamarinRevision.Dependency\XamarinRevision.Dependency.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resx\Splashscreen.ar.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Splashscreen.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resx\Splashscreen.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Splashscreen.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="MVVM\Views\ImageViewer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\ProductScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\Splashscreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\tst.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\Splashscreen.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Splashscreen.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\Splashscreen.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Splashscreen.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Themes\Resources.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

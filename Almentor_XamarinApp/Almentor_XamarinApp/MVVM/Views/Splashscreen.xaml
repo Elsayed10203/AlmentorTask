@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Almentor_XamarinApp.MVVM.Views.Splashscreen"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+         xmlns:Resx="clr-namespace:Almentor_XamarinApp.Resx" 
+             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin" xmlns:local1="clr-namespace:Almentor_XamarinApp.Helpers">
+    <ContentPage.Content>
+        <StackLayout   x:Name="stck_Cont">
+                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                     
+                <StackLayout>
+                    <StackLayout HorizontalOptions="StartAndExpand"
+                                 Padding="10"
+                                 x:Name="stck_lang" 
+                                 >
+                        <ImageButton  
+                            
+                                BackgroundColor="Transparent"
+                           Source="{local1:EmbededImage Almentor_XamarinApp.Images.Icon.Lang.png}" 
+                               x:Name="btn_lang"  Padding="0"
+                                    Command="{Binding LanguageCommand}"
+                                />
+                    </StackLayout>
+                    <StackLayout  
+                                 WidthRequest="200"
+                                  HorizontalOptions="CenterAndExpand"
+                                 >
+                        <ci:CircleImage x:Name="ImgLogo"  />
+
+                     </StackLayout>
+                </StackLayout>    
+                     
+                <StackLayout  Margin="0,30,0,0">
+                     
+                </StackLayout>
+
+                <StackLayout  
+                             x:Name="stck_BtnNavig"
+                             HorizontalOptions="FillAndExpand"  
+                             VerticalOptions="CenterAndExpand"  
+                             >
+                    
+                        <Button Text="{x:Static Resx:Splashscreen.BtnProdct}"   
+                             CornerRadius="10" HorizontalOptions="CenterAndExpand"
+                             FontSize="18"
+                           Padding="15"  CharacterSpacing="1"
+                            Command="{Binding NavigateCommand}"
+                            Clicked="BtnProdct_Clicked"
+                            x:Name="BtnProdct" 
+                             TextColor="{StaticResource  PrimaryLight}" 
+                            BackgroundColor="DodgerBlue"
+                            />
+                 </StackLayout>
+             </StackLayout>
+         </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

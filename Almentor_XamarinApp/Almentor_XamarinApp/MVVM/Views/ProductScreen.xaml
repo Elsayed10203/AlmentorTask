@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local1="clr-namespace:Almentor_XamarinApp.Helpers"
+             x:Class="Almentor_XamarinApp.MVVM.Views.ProductScreen"
+             NavigationPage.HasBackButton="False" 
+             NavigationPage.HasNavigationBar="False"
+               xmlns:Resx="clr-namespace:Almentor_XamarinApp.Resx" 
+               x:Name="MyProductPag"
+             >
+    <ContentPage.Content>
+        
+        <StackLayout >
+            <StackLayout Padding="20"   
+                        
+                         Orientation="Horizontal"
+                         >
+                <ImageButton  
+                    x:Name="btnBack"
+                    Clicked="btnBack_Clicked"
+                    VerticalOptions="CenterAndExpand" 
+                    WidthRequest="25" 
+                    BackgroundColor="Transparent"
+                    Source="{local1:EmbededImage Almentor_XamarinApp.Images.Icon.left.png}"/>
+                <Label Text="{x:Static Resx:Splashscreen.LblAllProduct}"  
+                       FontSize="20"
+                   VerticalOptions="CenterAndExpand" 
+
+                       />
+            </StackLayout>
+
+            
+            
+            
+            
+            
+            <CollectionView ItemsSource="{Binding AllProduct}"
+                            x:Name="lst_Horizontal"
+                            
+                ItemsLayout="VerticalGrid, 2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="5">
+                            <Frame Padding="0" 
+                                   CornerRadius="10"
+                                 
+                               >
+                                <StackLayout Padding="5"  >
+
+
+                                    <Image  
+                                    HorizontalOptions="CenterAndExpand"
+                       Source="{Binding productImage}"
+                       Aspect="AspectFill" 
+                        
+                       />
+                                    <Label  
+                       Text="{Binding productName}"
+                       FontAttributes="Bold"
+                       LineBreakMode="TailTruncation" 
+                       HorizontalOptions="CenterAndExpand"
+                       
+                                        />
+
+                                     <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                                         <Button Text="{x:Static Resx:Splashscreen.btn_nav}" 
+                                            x:Name="btn_nav"
+                                            HeightRequest="40"
+                                            CornerRadius="7"
+                                            BackgroundColor="{StaticResource Blue}"
+                                             TextColor="{StaticResource Gray-100}"
+                                            Clicked="btn_nav_Clicked"
+                                            Command="{Binding BindingContext.NavigateDetailsCommand ,Source={x:Reference MyProductPag}}" 
+                                            CommandParameter="{Binding productgId}"
+                                        />
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
