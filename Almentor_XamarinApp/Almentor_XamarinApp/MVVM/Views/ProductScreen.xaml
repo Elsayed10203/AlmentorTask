@@ -55,7 +55,7 @@
                     <!--ListView Custome-->
 
 
-                    <StackLayout Margin="0,5,0,0" Grid.Row="0">
+                    <StackLayout Margin="0,5,0,0" Grid.Row="0"  >
                         <Label Text="Custome List Render"
                                HorizontalOptions="CenterAndExpand" 
                                Style="{StaticResource Style3}"  
@@ -69,8 +69,9 @@
                                     <ContentView>
                                         <ContentView.Content >
                                             <StackLayout WidthRequest="100" Padding="5">
-                                                <Image Source="{Binding productImage}" />
-
+                                                <Image Source="{Binding productImage}" HeightRequest="170" WidthRequest="170" x:Name="img"/>
+                                                <ActivityIndicator  IsRunning="True" BindingContext="{x:Reference img}" 
+                                       IsVisible="{Binding Path=IsLoading}"  Color="{StaticResource Red}"/>
                                                 <Label Text="{Binding productName}"
                                                LineBreakMode="MiddleTruncation"
                                                HorizontalTextAlignment="Center"
@@ -122,13 +123,15 @@
                                                     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                                                                    >
                              
-                                                                <Image  
+                                                                <Image  x:Name="img2" HeightRequest="150" WidthRequest="150"
                                     HorizontalOptions="CenterAndExpand"
                        Source="{Binding productImage}"
                        Aspect="AspectFill" 
                         
                        />
-                                                                <Label  
+                               <ActivityIndicator  IsRunning="True" BindingContext="{x:Reference img2}" 
+                                       IsVisible="{Binding Path=IsLoading}"  Color="{StaticResource Red}"/>
+                                                        <Label  
                        Text="{Binding productName}"
                        FontAttributes="Bold"
                        LineBreakMode="TailTruncation" 
@@ -172,20 +175,22 @@
                 ItemsLayout="VerticalGrid, 2">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <ContentView 
+                                    <ContentView  
                                         Rotation="90"   
                                         Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                                           >
-                                        <StackLayout Padding="0">
+                                        <StackLayout Padding="10" >
 
                                             <StackLayout Padding="0"  >
 
 
-                                                <Image  HeightRequest="100"
-                                    HorizontalOptions="CenterAndExpand"
+                                                <Image  HeightRequest="100" WidthRequest="100" x:Name="img2" Margin="5"
+                                    HorizontalOptions="CenterAndExpand" 
                        Source="{Binding productImage}"
                          
                        />
+                                                <ActivityIndicator  IsRunning="True" BindingContext="{x:Reference img2}" 
+                                       IsVisible="{Binding Path=IsLoading}"  Color="{StaticResource Red}"/>
                                                 <Label  
                        Text="{Binding productName}"
                        FontAttributes="Bold"
@@ -196,7 +201,7 @@
 
                                                 <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
                                                     <Button Text="{x:Static Resx:Splashscreen.btn_nav}" 
-                                            x:Name="btn_nav"
+                                            x:Name="btn_nav" Margin="10"
                                             HeightRequest="40"
                                             CornerRadius="7"
                                             BackgroundColor="{StaticResource Red}"
@@ -204,6 +209,7 @@
                                              Command="{Binding BindingContext.NavigateDetailsCommand ,Source={x:Reference MyProductPag}}" 
                                             CommandParameter="{Binding productgId}"
                                         />
+                                                    <Label HeightRequest="20"/>
                                                 </StackLayout>
 
                                             </StackLayout>

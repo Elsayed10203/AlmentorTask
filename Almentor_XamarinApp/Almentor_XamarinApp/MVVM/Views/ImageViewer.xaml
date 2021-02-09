@@ -16,82 +16,95 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Padding="20"   
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="20"   
                          x:Name="stckHeadre"
                          Orientation="Horizontal"
                          >
-                <ImageButton  
+                    <ImageButton  
                     x:Name="btnBack"
                     Command="{Binding NavigateProductCommand}" 
                      VerticalOptions="CenterAndExpand" 
                     WidthRequest="25" 
                     BackgroundColor="Transparent"
                     Source="{local1:EmbededImage Almentor_XamarinApp.Images.Icon.left.png}"/>
-                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-                    <Label       
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Label       
                         VerticalOptions="StartAndExpand"
                         FontAttributes="Bold" CharacterSpacing="1"
                     x:Name="LblDetails" FontSize="19"
                     Text="{x:Static Resx:Splashscreen.lbl_details}" 
                        />
-                    <Label x:Name="lbl_id"  
+                        <Label x:Name="lbl_id"  
                            FontSize="19"
                            />
+                    </StackLayout>
+
                 </StackLayout>
 
-            </StackLayout>
-           
-            <StackLayout HorizontalOptions="FillAndExpand"
+                <StackLayout HorizontalOptions="FillAndExpand" Padding="15"
                          VerticalOptions="FillAndExpand">
 
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Blue}" Margin="-5">
-                    <cv:CarouselViewControl x:Name="ImagCarouser" ShowIndicators="true" IndicatorsShape="Circle" IndicatorsTintColor="LightGray"
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Blue}">
+                        <cv:CarouselViewControl x:Name="ImagCarouser" ShowIndicators="true" IndicatorsShape="Circle" IndicatorsTintColor="LightGray"
                                 CurrentPageIndicatorTintColor="{StaticResource Blue}" Orientation="Horizontal" InterPageSpacing="0"  
                                 ItemsSource="{Binding WalkthroughItems}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
                                 AnimateTransition="True">
-                        <cv:CarouselViewControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid HorizontalOptions="FillAndExpand">
-                                    <Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="FillAndExpand" 
+                            <cv:CarouselViewControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid HorizontalOptions="FillAndExpand">
+                                        <Image Source="{Binding Image}"  
+                                               Aspect="Fill" 
+                                               VerticalOptions="FillAndExpand"  
+                                               x:Name="img"
                                            HorizontalOptions="FillAndExpand"/>
-                                    <StackLayout Orientation="Vertical" Spacing="20" HorizontalOptions="Start" 
-                                                 VerticalOptions="End" WidthRequest="300" Margin="20,50">
-                                        <Frame HasShadow="False" 
+                                        <ActivityIndicator  IsRunning="True" BindingContext="{x:Reference img}" 
+                                       IsVisible="{Binding Path=IsLoading}"  
+                                                            HeightRequest="50" WidthRequest="50"
+                                                             
+                                                            Color="{StaticResource Red}"/>
+                                        
+                                        <StackLayout Orientation="Vertical" Spacing="20" HorizontalOptions="FillAndExpand" 
+                                                 VerticalOptions="End"  >
+                                            <Frame HasShadow="False" 
                                                BackgroundColor="{StaticResource Blue}" 
                                                CornerRadius="15" 
-                                   Padding="0" HorizontalOptions="Start" VerticalOptions="Start"
-                                   WidthRequest="100" HeightRequest="30">
-                                            <Label Text="{Binding Heading}" 
+                                            Padding="0" HorizontalOptions="Start" VerticalOptions="Start"
+                                             WidthRequest="100" 
+                                                   HeightRequest="30">
+                                                <Label Text="{Binding Heading}" 
                                                    FontSize="14" TextColor="White" HorizontalTextAlignment="Center" 
                                                    VerticalOptions="Center"/>
-                                        </Frame>
+                                            </Frame>
 
-                                        <StackLayout Orientation="Vertical"
+                                            <StackLayout Orientation="Vertical"
                                                      HorizontalOptions="EndAndExpand"
                                                      >
-                                            <Label x:Name="CaptionTxt" Text="{Binding Caption}" 
+                                                <Label x:Name="CaptionTxt" Text="{Binding Caption}" 
                                                    FontSize="20" TextColor="White" 
-                                                   Margin="0,0,0,70"/>
-                                          
-                                        </StackLayout>
-                                        <StackLayout
-                                            
+                                                    VerticalOptions="StartAndExpand"/>
+
+                                            </StackLayout>
+                                            <StackLayout
+                                            Margin="0,0,0,30"
                                             HorizontalOptions="CenterAndExpand"  
-                                            VerticalOptions="EndAndExpand">
-                                            <Label Margin="15,0,0,0" CharacterSpacing="2"
+                                            VerticalOptions="StartAndExpand">
+                                                <Label   CharacterSpacing="2"
                                                 BackgroundColor="{StaticResource Gray-200}"
                                                 FontSize="19" TextColor="{StaticResource FacebookBlue}"
                                                 Text="{Binding Id ,Converter={StaticResource ConverterIndex}}"
                                                 />
+                                            </StackLayout>
                                         </StackLayout>
-                                    </StackLayout>
-                                </Grid>
-                            </DataTemplate>
-                        </cv:CarouselViewControl.ItemTemplate>
-                    </cv:CarouselViewControl>
-                </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </cv:CarouselViewControl.ItemTemplate>
+                        </cv:CarouselViewControl>
+                    </Grid>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-    </ContentPage.Content>
+
+        </ScrollView>
+     </ContentPage.Content>
 </ContentPage>

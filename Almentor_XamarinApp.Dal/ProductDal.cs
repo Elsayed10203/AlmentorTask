@@ -83,15 +83,15 @@ namespace Almentor_XamarinApp.Dal
         {
             return new ObservableCollection<Product>()
             {
-                new Product(){productgId=1,productName="منتج 1",productPrice=5200,productImage="https://picsum.photos/205/300"},
-                new Product(){productgId=2,productName="منتج 2",productPrice=5200,productImage="https://picsum.photos/206/300"},
+                new Product(){productgId=1,productName="منتج 1",productPrice=5200,productImage="https://picsum.photos/222/300"},
+                new Product(){productgId=2,productName="منتج 2",productPrice=5200,productImage="https://picsum.photos/223/300"},
                 new Product(){productgId=3,productName="منتج 3 ",productPrice=5200,productImage="https://picsum.photos/207/300"},
                 new Product(){productgId=4,productName="منتج 4",productPrice=5200,productImage="https://picsum.photos/208/300"},
-                new Product(){productgId=5,productName="منتج 5",productPrice=5200,productImage="https://picsum.photos/209/300"},
+                new Product(){productgId=5,productName="منتج 5",productPrice=5200,productImage="https://picsum.photos/227/300"},
                 new Product(){productgId=6,productName="منتج 6",productPrice=5200,productImage="https://picsum.photos/222/300"},
                 new Product(){productgId=7,productName="منتج7",productPrice=5200,productImage="https://picsum.photos/205/300"},
                 new Product(){productgId=8,productName="منتج 8 ",productPrice=5200,productImage="https://picsum.photos/207/300"},
-                new Product(){productgId=9,productName="منتج 9 ",productPrice=5200,productImage="https://picsum.photos/207/300"},
+                new Product(){productgId=9,productName="منتج 9 ",productPrice=5200,productImage="https://picsum.photos/222/300"},
               
 
             };
