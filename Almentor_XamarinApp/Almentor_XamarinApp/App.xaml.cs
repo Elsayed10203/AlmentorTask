@@ -11,7 +11,7 @@ namespace Almentor_XamarinApp
             InitializeComponent();
             var page = new MVVM.Views.Splashscreen();
             Helpers.Services.GetFlowDirection(page);
-            MainPage = new NavigationPage(new MVVM.Views.tst());
+            MainPage = new NavigationPage(new MVVM.Views.Splashscreen());
         }
         public string Language
         {

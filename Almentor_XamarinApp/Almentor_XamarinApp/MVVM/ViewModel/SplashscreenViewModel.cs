@@ -10,7 +10,8 @@ namespace Almentor_XamarinApp.MVVM.ViewModel
 {
    public class SplashscreenViewModel
     {
-        public  INavigation Navigation { get; set; }
+ 
+        public INavigation Navigation { get; set; }
         public ICommand LanguageCommand { get; private set; }
          public SplashscreenViewModel(INavigation Navigation_)
         {

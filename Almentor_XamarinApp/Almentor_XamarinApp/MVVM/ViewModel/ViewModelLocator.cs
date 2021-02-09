@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
- using XamarinRevision.Common.Interface;
-using XamarinRevision.Dependency;
+ using Almentor_XamarinApp.Common.Interface;
+using Almentor_XamarinApp.Dependency;
 
 namespace Almentor_XamarinApp.MVVM.ViewModel
 {

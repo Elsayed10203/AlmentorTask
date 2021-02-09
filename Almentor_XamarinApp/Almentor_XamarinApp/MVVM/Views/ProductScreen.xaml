@@ -1,60 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local1="clr-namespace:Almentor_XamarinApp.Helpers"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Almentor_XamarinApp.MVVM.Views.ProductScreen"
-             NavigationPage.HasBackButton="False" 
+               NavigationPage.HasBackButton="False" 
              NavigationPage.HasNavigationBar="False"
                xmlns:Resx="clr-namespace:Almentor_XamarinApp.Resx" 
-               x:Name="MyProductPag"
+             xmlns:local1="clr-namespace:Almentor_XamarinApp.Helpers" 
+             xmlns:local="clr-namespace:Almentor_XamarinApp.Helpers.CustomRender" 
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Name="MyProductPag"
              >
     <ContentPage.Content>
-        
-        <StackLayout >
-            <StackLayout Padding="20"   
-                        
-                         Orientation="Horizontal"
+
+
+        <ScrollView Margin="0,5,0,0">
+            <StackLayout >
+                <!--StackHeadre-->
+                <StackLayout x:Name="StckHeadre" Margin="10,0,0,0">
+                    <StackLayout  
+                          Orientation="Horizontal"
                          >
-                <ImageButton  
-                    x:Name="btnBack"
-                    Clicked="btnBack_Clicked"
-                    VerticalOptions="CenterAndExpand" 
+                        <ImageButton  
+                     x:Name="btnBack"
+                     VerticalOptions="CenterAndExpand" 
                     WidthRequest="25" 
+                    Command="{Binding NavigateLogoCommand}"
                     BackgroundColor="Transparent"
                     Source="{local1:EmbededImage Almentor_XamarinApp.Images.Icon.left.png}"/>
-                <Label Text="{x:Static Resx:Splashscreen.LblAllProduct}"  
+                        <Label Text="{x:Static Resx:Splashscreen.LblAllProduct}"  
                        FontSize="20"
                    VerticalOptions="CenterAndExpand" 
-
                        />
-            </StackLayout>
-
-            
-            
-            
-            
-            
-            <CollectionView ItemsSource="{Binding AllProduct}"
-                            x:Name="lst_Horizontal"
-                            
-                ItemsLayout="VerticalGrid, 2">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="5">
-                            <Frame Padding="0" 
-                                   CornerRadius="10"
-                                 
-                               >
-                                <StackLayout Padding="5"  >
+                    </StackLayout>
+                </StackLayout>
 
 
-                                    <Image  
+                <Grid HorizontalOptions="FillAndExpand"
+              Margin="5"
+			  Padding="5">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition  />
+                        <RowDefinition    />
+                        <RowDefinition  />
+                    </Grid.RowDefinitions>
+
+
+
+
+                    <!--ListView Custome-->
+
+
+                    <StackLayout Margin="0,5,0,0" Grid.Row="0">
+                        <Label Text="Custome List Render"
+                               HorizontalOptions="CenterAndExpand" 
+                               Style="{StaticResource Style3}"  
+                               />
+                        <local:HVScrollGridView ListOrientation="Horizontal"
+                                    x:Name="lst_cust2"
+                                    Grid.Row="3"
+ 									VerticalOptions="Start">
+                            <local:HVScrollGridView.ItemTemplate>
+                                <DataTemplate>
+                                    <ContentView>
+                                        <ContentView.Content >
+                                            <StackLayout WidthRequest="100" Padding="5">
+                                                <Image Source="{Binding productImage}" />
+
+                                                <Label Text="{Binding productName}"
+                                               LineBreakMode="MiddleTruncation"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"/>
+
+                                                <Button Text="{x:Static Resx:Splashscreen.btn_nav}" 
+                                            x:Name="btn_nav"
+                                            HeightRequest="40"
+                                            CornerRadius="7" 
+                                            CommandParameter="{Binding productgId}"
+                                            Command="{Binding BindingContext.NavigateDetailsCommand ,Source={x:Reference MyProductPag}}" 
+                                            BackgroundColor="{StaticResource Blue}"
+                                             TextColor="{StaticResource Gray-100}"
+                                          />
+
+                                            </StackLayout>
+                                        </ContentView.Content>
+                                    </ContentView>
+                                </DataTemplate>
+                            </local:HVScrollGridView.ItemTemplate>
+                        </local:HVScrollGridView>
+
+                    </StackLayout>
+
+
+
+                    <StackLayout Grid.Row="1" Margin="0,50,0,0"   >
+
+                    
+                        <!--ListView-->
+
+                        <StackLayout   HorizontalOptions="FillAndExpand"  
+                                     VerticalOptions="FillAndExpand"   
+                                     Margin="0,0,0,0">
+                            <ListView  
+                    Rotation="270"
+                    x:Name="lstview"
+                      SelectionMode="None" 
+                          HasUnevenRows="True"
+                           SeparatorVisibility="None"                    >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell >
+                                            <StackLayout >
+                                                <ContentView Padding="0" HorizontalOptions="CenterAndExpand"
+                                                             VerticalOptions="FillAndExpand"
+                                    Rotation="90" 
+                                     >
+                                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                                                   >
+                             
+                                                                <Image  
                                     HorizontalOptions="CenterAndExpand"
                        Source="{Binding productImage}"
                        Aspect="AspectFill" 
                         
                        />
-                                    <Label  
+                                                                <Label  
                        Text="{Binding productName}"
                        FontAttributes="Bold"
                        LineBreakMode="TailTruncation" 
@@ -62,25 +136,91 @@
                        
                                         />
 
-                                     <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
-                                         <Button Text="{x:Static Resx:Splashscreen.btn_nav}" 
+                                                                <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                                                                    <Button Text="{x:Static Resx:Splashscreen.btn_nav}" 
                                             x:Name="btn_nav"
                                             HeightRequest="40"
                                             CornerRadius="7"
                                             BackgroundColor="{StaticResource Blue}"
                                              TextColor="{StaticResource Gray-100}"
-                                            Clicked="btn_nav_Clicked"
-                                            Command="{Binding BindingContext.NavigateDetailsCommand ,Source={x:Reference MyProductPag}}" 
+                                          />
+                                                                </StackLayout>
+
+                                                      </StackLayout>
+
+
+                                                </ContentView>
+
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+
+ 
+
+                    <!--CollectionViewRotaion-->
+                    <StackLayout Grid.Row="2" Margin="0,50,0,0" >
+                        <CollectionView ItemsSource="{Binding AllProduct}" 
+                             x:Name="lst_Horizontal"
+                            Rotation="270"
+                ItemsLayout="VerticalGrid, 2">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <ContentView 
+                                        Rotation="90"   
+                                        Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                          >
+                                        <StackLayout Padding="0">
+
+                                            <StackLayout Padding="0"  >
+
+
+                                                <Image  HeightRequest="100"
+                                    HorizontalOptions="CenterAndExpand"
+                       Source="{Binding productImage}"
+                         
+                       />
+                                                <Label  
+                       Text="{Binding productName}"
+                       FontAttributes="Bold"
+                       LineBreakMode="TailTruncation" 
+                       HorizontalOptions="CenterAndExpand"
+                       
+                                        />
+
+                                                <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                                                    <Button Text="{x:Static Resx:Splashscreen.btn_nav}" 
+                                            x:Name="btn_nav"
+                                            HeightRequest="40"
+                                            CornerRadius="7"
+                                            BackgroundColor="{StaticResource Blue}"
+                                             TextColor="{StaticResource Gray-100}"
+                                             Command="{Binding BindingContext.NavigateDetailsCommand ,Source={x:Reference MyProductPag}}" 
                                             CommandParameter="{Binding productgId}"
                                         />
-                                    </StackLayout>
+                                                </StackLayout>
 
-                                </StackLayout>
-                            </Frame>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ContentView>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </StackLayout>
+
+
+
+                </Grid>
+
+            </StackLayout>
+         </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

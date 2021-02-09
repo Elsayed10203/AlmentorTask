@@ -36,11 +36,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\XamarinRevision.Common\XamarinRevision.Common.csproj" />
-    <ProjectReference Include="..\..\XamarinRevision.Dependency\XamarinRevision.Dependency.csproj" />
+    <ProjectReference Include="..\..\Almentor_XamarinApp.Common\Almentor_XamarinApp.Common.csproj" />
+    <ProjectReference Include="..\..\Almentor_XamarinApp.Dal\Almentor_XamarinApp.Dal.csproj" />
+    <ProjectReference Include="..\..\Almentor_XamarinApp.Dependency\Almentor_XamarinApp.Dependency.csproj" />
+    <ProjectReference Include="..\..\Almentor_XamarinApp.Service\Almentor_XamarinApp.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="MVVM\Views\ProductScreen.xaml.cs">
+      <DependentUpon>ProductScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Resx\Splashscreen.ar.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -57,13 +62,10 @@
     <EmbeddedResource Update="MVVM\Views\ImageViewer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MVVM\Views\ProductScreen.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\Splashscreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MVVM\Views\tst.xaml">
+    <EmbeddedResource Update="MVVM\Views\ProductScreen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resx\Splashscreen.ar.resx">

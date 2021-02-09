@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-using XamarinRevision.Common.Interface;
-using XamarinRevision.Common.Models;
+using Almentor_XamarinApp.Common.Interface;
+using Almentor_XamarinApp.Common.Models;
 
 namespace Almentor_XamarinApp.MVVM.ViewModel
 {
@@ -17,6 +17,7 @@ namespace Almentor_XamarinApp.MVVM.ViewModel
         public ICommand GetImageCarouserCommand { get; }
         public ICommand NavigateDetailsCommand { get; }
         public ICommand NavigateProductCommand { get; }
+        public ICommand NavigateLogoCommand { get; }
 
         public ObservableCollection<Product> AllProduct;
 
@@ -29,6 +30,7 @@ namespace Almentor_XamarinApp.MVVM.ViewModel
             GetImageCarouserCommand = new Command(GetImageCarouser);
             NavigateDetailsCommand = new Command((object prodId) => NavigateDetails(prodId));
             NavigateProductCommand = new Command(() => Navigateproduct());
+            NavigateLogoCommand = new Command(() => NavigateLogo());
 
         }
 
@@ -64,10 +66,14 @@ namespace Almentor_XamarinApp.MVVM.ViewModel
             int Id = int.Parse(prodId.ToString());
            Application.Current.MainPage = new NavigationPage(new MVVM.Views.ImageViewer(Id));
         }
-
+      
         public void Navigateproduct( )
         {
              Application.Current.MainPage = new NavigationPage(new MVVM.Views.ProductScreen());
+        }
+        public void NavigateLogo()
+        {
+            Application.Current.MainPage = new NavigationPage(new MVVM.Views.Splashscreen());
         }
 
     }

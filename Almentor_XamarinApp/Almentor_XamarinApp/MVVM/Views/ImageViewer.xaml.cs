@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XamarinRevision.Common.Models;
+using Almentor_XamarinApp.Common.Models;
 
 namespace Almentor_XamarinApp.MVVM.Views
 {

@@ -1,48 +1,37 @@
-﻿using Almentor_XamarinApp.MVVM.ViewModel;
+﻿using Almentor_XamarinApp.Common.Models;
+using Almentor_XamarinApp.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XamarinRevision.Common.Interface;
-using XamarinRevision.Common.Models;
 
 namespace Almentor_XamarinApp.MVVM.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductScreen : ContentPage
     {
-         ProductViewModel ProductViewModel;
+        ProductViewModel ProductViewModel;
+
         public ProductScreen()
         {
             InitializeComponent();
-             this.BindingContext = ProductViewModel = MVVM.ViewModel.ViewModelLocator.ProductViewModel;
-            Helpers.Services.GetFlowDirection(this);
+            this.BindingContext = StckHeadre.BindingContext= ProductViewModel = MVVM.ViewModel.ViewModelLocator.ProductViewModel;
 
-          }
-        
+            Helpers.Services.GetFlowDirection(this);
+        }
+
+
         protected override void OnAppearing()
         {
-            ProductViewModel.GetProducts();
-            lst_Horizontal.ItemsSource = ProductViewModel.AllProduct;
-        }
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
+             ProductViewModel.GetProducts();
+              lst_Horizontal.ItemsSource=lst_cust2.ItemsSource=lstview.ItemsSource = ProductViewModel.AllProduct;
         }
 
-        private void btnBack_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PopAsync();
-        }
-
-        private void btn_nav_Clicked(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
