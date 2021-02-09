@@ -45,8 +45,15 @@
 
                 <StackLayout HorizontalOptions="FillAndExpand" Padding="15"
                          VerticalOptions="FillAndExpand">
-
-                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Blue}">
+                    <StackLayout>
+                        <ActivityIndicator 
+                            x:Name="Indic_show" 
+                            Color="{StaticResource Red}"
+                            IsRunning="true" IsVisible="true"
+                                           />
+                    </StackLayout>
+                    <Grid HorizontalOptions="FillAndExpand" 
+                          VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Blue}">
                         <cv:CarouselViewControl x:Name="ImagCarouser" ShowIndicators="true" IndicatorsShape="Circle" IndicatorsTintColor="LightGray"
                                 CurrentPageIndicatorTintColor="{StaticResource Blue}" Orientation="Horizontal" InterPageSpacing="0"  
                                 ItemsSource="{Binding WalkthroughItems}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 

@@ -19,11 +19,9 @@ namespace Almentor_XamarinApp.MVVM.Views
         public ImageViewer(int id)
         {
             InitializeComponent();
-            Helpers.Services.GetFlowDirection(this);
-           this.BindingContext= stckHeadre.BindingContext=ProductViewModel_ = MVVM.ViewModel.ViewModelLocator.ProductViewModel;
-            ProductViewModel_.GetImageCarouser();
-            ImagCarouser.ItemsSource = ProductViewModel_.AllImageCarouser;
+
             lbl_id.Text = id.ToString();
+
         }
         private Timer timer;
 
@@ -31,8 +29,13 @@ namespace Almentor_XamarinApp.MVVM.Views
         {
             try
             {
-                timer = new Timer(TimeSpan.FromSeconds(5).TotalMilliseconds) { AutoReset = true, Enabled = true };
+                Helpers.Services.GetFlowDirection(this);
+                this.BindingContext = stckHeadre.BindingContext = ProductViewModel_ = MVVM.ViewModel.ViewModelLocator.ProductViewModel;
+                ProductViewModel_.GetImageCarouser();
+                ImagCarouser.ItemsSource = ProductViewModel_.AllImageCarouser;
+                  timer = new Timer(TimeSpan.FromSeconds(2).TotalMilliseconds) { AutoReset = true, Enabled = true };
                 timer.Elapsed += Timer_Elapsed;
+                Indic_show.IsVisible = false;
                 base.OnAppearing();
             }
             catch (Exception)
